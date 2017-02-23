@@ -4,7 +4,7 @@ const initialState = {
     tasks: []
 };
 
-export default const taskReducer = function(state = initialState, action) {
+const taskReducer = function(state = initialState, action) {
 
     switch(action.type) {
 
@@ -24,3 +24,5 @@ export default const taskReducer = function(state = initialState, action) {
             return state;
     }
 }
+
+export default taskReducer
