@@ -1,7 +1,6 @@
-import React from 'react'
 import TodoList from './TodoList'
-import store from '../store/store'
 import { connect } from 'react-redux'
+import { deleteTodo } from '../actions/index'
 
 const mapStateToProps = (state) => {
     return  {
@@ -9,6 +8,14 @@ const mapStateToProps = (state) => {
     }
 };
 
-const TodoContainer = connect(mapStateToProps)(TodoList);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onDeleteClick: (id) => {
+            dispatch(deleteTodo(id))
+        }
+    }
+};
+
+const TodoContainer = connect(mapStateToProps, mapDispatchToProps)(TodoList);
 
 export default TodoContainer

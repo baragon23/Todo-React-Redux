@@ -1,11 +1,14 @@
 import * as types from '../constants/ActionTypes';
 
+let nextTaskId = 0;
+
 export const addTodo = (task) => ({
     type: types.ADD_TODO,
-    text: task
+    text: task,
+    id: nextTaskId++
 });
 
-export const deleteTask = (taskId) => ({
-    type: types.DELETE_TASK,
-    taskId: taskId
+export const deleteTodo = (taskId) => ({
+    type: types.DELETE_TODO,
+    id: taskId
 });

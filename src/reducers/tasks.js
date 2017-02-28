@@ -1,23 +1,21 @@
 import * as types from '../constants/ActionTypes';
 
 const taskReducer = function(state = [], action) {
+
     switch(action.type) {
 
         case types.ADD_TODO:
             return [
                 ...state,
                 {
-                    text: action.text
+                    text: action.text,
+                    id: action.id
                 }
             ]
 
-        case types.DELETE_TASK:
-            const todoList = state.tasks.filter((task) => {
-                if(task.key !== action.key) {
-                    return task;
-                }
-            });
-            return Object.assign({}, state, { tasks: todoList });
+        case types.DELETE_TODO:
+            const taskId = action.id;
+            return state.filter((task) => task.id !== taskId);
 
         default:
             return state;

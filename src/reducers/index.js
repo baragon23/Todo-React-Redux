@@ -4,7 +4,7 @@ import { combineReducers } from 'redux';
 import tasksReducer from './tasks';
 
 // Combine Reducers
-var reducers = combineReducers({
+let reducers = combineReducers({
     todos: tasksReducer
 });
 
