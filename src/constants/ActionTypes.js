@@ -1,2 +1,2 @@
-export const NEW_TASK = 'NEW_TASK';
+export const ADD_TODO = 'ADD_TODO';
 export const DELETE_TASK = 'DELETE_TASK';

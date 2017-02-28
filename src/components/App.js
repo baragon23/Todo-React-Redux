@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 // import '../App.css';
-import NewTodo from './NewTodo.js'
+import NewTodoContainer from './NewTodoContainer.js'
 import TodoContainer from './TodoContainer.js'
 
 export default class App extends Component {
-    constructor(props) {
+    /*constructor(props) {
         super(props)
         this.state = {
             todos: [ ]
@@ -28,7 +28,7 @@ export default class App extends Component {
             }
         });
         this.setState({ todos: todoList });
-    }
+    }*/
 
     render() {
         return (
@@ -38,8 +38,8 @@ export default class App extends Component {
                     <div className="large-4 columns"><h1>Todo App</h1></div>
                     <div className="large-4 columns"></div>
                 </div>
-                <NewTodo addTodo={this.addTodo.bind(this)} />
-                <TodoContainer todos={this.state.todos} removeTodo={this.removeTodo.bind(this)} />
+                <NewTodoContainer /*addTodo={this.addTodo.bind(this)}*/ />
+                <TodoContainer /*todos={this.state.todos} removeTodo={this.removeTodo.bind(this)}*/ />
             </div>
         )
     }

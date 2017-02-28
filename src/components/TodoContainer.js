@@ -1,33 +1,14 @@
 import React from 'react'
-import Todos from './Todos.js'
+import TodoList from './TodoList'
 import store from '../store/store'
 import { connect } from 'react-redux'
 
-/*const TodoContainer = props => {
-    return (
-        <div className="row">
-            { props.todos.map((todo, i) => <Todos key={i} todo={todo} removeTodo={props.removeTodo} /> )}
-        </div>
-    )
-}
-
-export default TodoContainer */
-
-const TodoContainer = React.createClass({
-
-    render: function() {
-        return (
-            <div className="row">
-                { props.todos.map((todo, i) => <Todos key={i} todo={todo} removeTodo={props.removeTodo} /> )}
-            </div>
-        );
-    }
-});
-
-const mapStateToProps = function(store) {
+const mapStateToProps = (state) => {
     return  {
-        todos: store.taskState.tasks
+        todos: state.todos
     }
 };
 
-export default connect(mapStateToProps)(TodoContainer)
+const TodoContainer = connect(mapStateToProps)(TodoList);
+
+export default TodoContainer

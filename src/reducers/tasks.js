@@ -1,24 +1,23 @@
-import * as types from '../actions/index';
+import * as types from '../constants/ActionTypes';
 
-const initialState = {
-    tasks: []
-};
-
-const taskReducer = function(state = initialState, action) {
-
+const taskReducer = function(state = [], action) {
     switch(action.type) {
 
-        case types.NEW_TASK:
-            return Object.assign({}, state, { task: action.task });
+        case types.ADD_TODO:
+            return [
+                ...state,
+                {
+                    text: action.text
+                }
+            ]
 
         case types.DELETE_TASK:
-
             const todoList = state.tasks.filter((task) => {
                 if(task.key !== action.key) {
-                    return todo;
+                    return task;
                 }
             });
-            return Object.assign({}, state, tasks: todoList);
+            return Object.assign({}, state, { tasks: todoList });
 
         default:
             return state;

@@ -1,6 +1,8 @@
 import React from 'react'
+import { addTodo } from '../actions/index'
+import { connect } from 'react-redux'
 
-const NewTodo = ({ addTodo }) => {
+let NewTodo = ({ dispatch }) => {
     let inputField;
 
     return (
@@ -13,7 +15,7 @@ const NewTodo = ({ addTodo }) => {
             </div>
             <div className="large-4 columns">
                 <button className="button success" onClick={() => {
-                    addTodo(inputField.value);
+                    dispatch(addTodo(inputField.value));
                     inputField.value = '';
                 }}>
                     Add
@@ -22,5 +24,7 @@ const NewTodo = ({ addTodo }) => {
         </div>
     );
 };
+
+NewTodo = connect()(NewTodo)
 
 export default NewTodo

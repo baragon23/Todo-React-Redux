@@ -1,8 +1,8 @@
-import * as types from '../actions/index';
+import * as types from '../constants/ActionTypes';
 
-export const newTask = (task) => ({
-    type: types.NEW_TASK,
-    task: task
+export const addTodo = (task) => ({
+    type: types.ADD_TODO,
+    text: task
 });
 
 export const deleteTask = (taskId) => ({
