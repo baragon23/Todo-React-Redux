@@ -1,20 +1,17 @@
-import React, { Component } from 'react';
-// import '../App.css';
-import NewTodoContainer from './NewTodoContainer'
-import TodoContainer from './TodoContainer'
+import React from 'react';
+import NewTodoContainer from '../containers/NewTodoContainer'
+import TodoContainer from '../containers/TodoContainer'
 
-export default class App extends Component {
-    render() {
-        return (
-            <div>
-                <div className="body row">
-                    <div className="large-4 columns"><p></p></div>
-                    <div className="large-4 columns"><h1>Ben's Amazing Todo List</h1></div>
-                    <div className="large-4 columns"></div>
-                </div>
-                <NewTodoContainer />
-                <TodoContainer />
+const App = () => (
+        <div>
+            <div className="body row">
+                <div className="large-4 columns"><p /></div>
+                <div className="large-4 columns"><h1>Ben's Amazing Todo List</h1></div>
+                <div className="large-4 columns" />
             </div>
-        )
-    }
-}
+            <NewTodoContainer />
+            <TodoContainer />
+        </div>
+)
+
+export default App

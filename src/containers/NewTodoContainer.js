@@ -1,4 +1,4 @@
-import NewTodo from './NewTodo'
+import NewTodo from '../components/NewTodo'
 
 import { connect } from 'react-redux'
 import { addTodo } from '../actions/index'
@@ -6,7 +6,7 @@ import { addTodo } from '../actions/index'
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addTodo: (text) => {
+        onAddClick: (text) => {
             dispatch(addTodo(text))
         }
     }

@@ -1,6 +1,8 @@
 import * as types from '../constants/ActionTypes';
 
-const taskReducer = function(state = [], action) {
+let nextTaskId = 0;
+
+const taskReducer = (state = [], action) => {
 
     switch(action.type) {
 
@@ -9,7 +11,7 @@ const taskReducer = function(state = [], action) {
                 ...state,
                 {
                     text: action.text,
-                    id: action.id
+                    id: nextTaskId++
                 }
             ]
 
